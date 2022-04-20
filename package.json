@@ -3,15 +3,22 @@
   "version": "0.1.0",
   "description": "A simple update blog for your product",
   "scripts": {
-    "start": "eleventy --serve",
-    "build": "NODE_ENV=production eleventy"
+    "start": "npm-run-all -p dev:*",
+    "build": "npx @11ty/eleventy && tailwindcss -i _site/css/styles.sass -o dist/css/styles.css",
+    "dev:11ty": "eleventy --serve --quiet",
+    "dev:css": "tailwindcss -i _site/css/styles.sass -o build/css/styles.css --watch --postcss"
   },
   "dependencies": {
     "eleventy-plugin-seo": "0.5.2",
     "luxon": "^2.3.2"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^1.0.0"
+    "@11ty/eleventy": "^1.0.0",
+    "autoprefixer": "^10.4.0",
+    "dayjs": "^1.10.7",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.0",
+    "tailwindcss": "^3.0.12"
   },
   "engines": {
     "node": "12"
