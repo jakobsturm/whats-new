@@ -1,0 +1,19 @@
+{
+  "name": "whats-new",
+  "version": "0.1.0",
+  "description": "A simple update blog for your product",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "NODE_ENV=production eleventy"
+  },
+  "dependencies": {
+    "eleventy-plugin-seo": "0.5.2",
+    "luxon": "^2.3.2"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.0"
+  },
+  "engines": {
+    "node": "12"
+  }
+}
